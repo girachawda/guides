@@ -10,7 +10,7 @@ next: /command-reference/bundle-version
 
 <em class="text-neutral-600">Update your gems to the latest available versions</em>
 
-<p>This reference was automatically generated from Bundler version 4.1.0.beta1.</p>
+<p>This reference was automatically generated from Bundler version 4.0.21.</p>
 
 <div class="mp" id="man">
 
@@ -73,7 +73,9 @@ you would call <code>bundle update --source rails</code>
 <dt><code>--ruby</code></dt>
 <dd>Update the locked version of Ruby to the current version of Ruby.</dd>
 <dt><code>--bundler[=BUNDLER]</code></dt>
-<dd>Update the locked version of bundler to the invoked bundler version.</dd>
+<dd>Update the locked version of bundler. BUNDLER can be a version such as
+<code>4.0.20</code>, or a requirement such as <code>"&gt; 0.a"</code>. With no argument, update to the
+latest released version, which never selects a prerelease.</dd>
 <dt>
 <code>--force</code>, <code>--redownload</code>
 </dt>
@@ -105,8 +107,8 @@ available processors.</dd>
 <dd>Use bundle install conservative update behavior and do not allow indirect dependencies to be updated.</dd>
 <dt><code>--cooldown=&lt;number&gt;</code></dt>
 <dd>Only consider gem versions published at least <var>number</var> days ago when
-resolving. Pass <code>0</code> to disable cooldown for this run, overriding every
-other cooldown setting, RubyGems' own included. Combine with <code>--conservative</code> to
+resolving. Pass <code>0</code> to disable cooldown for this run, overriding any
+per-source or global configuration. Combine with <code>--conservative</code> to
 minimize transitive churn when bypassing cooldown for an urgent
 update. See <code>cooldown</code> in <a class="man-ref" href="/command-reference/bundle-config/">bundle-config<span class="s">(1)</span></a>.</dd>
 </dl>
